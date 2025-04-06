@@ -1,126 +1,120 @@
-# PI-3 Backend
+# 🎓 Academic Control API — Backend de Gestão Educacional
 
-Este repositório contém o backend do projeto **PI-3**, desenvolvido utilizando **No, **Express**, **Prisma** e outras bibliotecas populares como **JWT** para autenticação e **bcrypt** para criptografia de senhas. 
-
-## Tecnologias Utilizadas
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 
-- **Express** - Framework para criação de APIs.
-- **Prisma** - ORM para banco de dados.
-- **JWT (jsonwebtoken)** - Biblioteca para autenticação via tokens JWT.
-- **bcrypt** - Biblioteca para criptografia de senhas.
-- **TypeScript** - Linguagem utilizada para garantir tipagem estática.
-- **Zod** - Validação de dados.
+Este repositório contém o backend da **Academic Control**, uma API RESTful para gerenciamento de usuários em um ambiente educacional.  
+O sistema é focado em prover diferentes níveis de acesso para **alunos**, **professores** e **gestores**, com autenticação segura e rotas protegidas.
 
-## Estrutura do Projeto
+> Desenvolvido com Node.js + TypeScript + MongoDB, este backend é o núcleo de um painel acadêmico completo.
 
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- Node.js
+- TypeScript
+- Express
+- MongoDB + Mongoose
+- JWT (Autenticação)
+- UUID
+- Bcrypt
+- Dotenv
+- Swagger (Documentação da API)
+
+---
+
+## 🧠 Funcionalidades
+
+- Cadastro e login de usuários
+- Controle de permissões por perfil (aluno, professor, gestor)
+- Rotas protegidas com autenticação JWT
+- Organização modular: controllers, services, middlewares
+- Integração com banco de dados MongoDB
+- Documentação com Swagger
+
+---
+
+## 📁 Estrutura do Projeto
+
+```bash
+## 📁 Estrutura do Projeto
+
+```bash
+academic-control-backend/
+├── prisma/              # Configurações do Prisma e esquemas do banco de dados
+├── src/                 # Código-fonte principal do backend
+│   ├── controllers/     # Controladores das rotas e regras de negócio
+│   ├── routes/          # Definições das rotas da API
+│   ├── middlewares/     # Middlewares (ex: autenticação, validações)
+│   ├── services/        # Lógica de serviços (conexões com banco, regras)
+│   ├── utils/           # Utilitários e helpers reutilizáveis
+│   └── index.ts         # Arquivo principal de inicialização da aplicação
+├── .gitignore           # Arquivos e diretórios ignorados pelo Git
+├── package.json         # Dependências e scripts do projeto
+├── tsconfig.json        # Configurações do TypeScript
+└── README.md            # Documentação do projeto
 ```
-PI-3-main/
-│
-├── prisma/                # Configurações do Prisma e esquemas de banco de dados
-├── src/                   # Código-fonte principal do backend
-│   ├── controllers/       # Controladores de rotas e regras de negócios
-│   ├── routes/            # Definições de rotas da API
-│   ├── middlewares/       # Middlewares como autenticação
-│   ├── services/          # Lógica de serviços
-│   └── utils/             # Utilitários e helpers
-├── .gitignore             # Arquivos e diretórios ignorados pelo Git
-├── package.json           # Dependências e scripts do projeto
-└── tsconfig.json          # Configurações do TypeScript
-```
 
-## Pré-requisitos
+---
 
+##
+---
 
-- **NPM** (v6 ou superior)
-- **Banco de dados compatível com Prisma** (PostgreSQL, MySQL, SQLite, etc.)
+## 📄 Documentação da API
 
-## Instalação
+A documentação da API está disponível via Swagger:
+
+GET /api-docs
+
+Ou diretamente via o arquivo `swagger.json` no repositório.
+
+---
+
+## ▶️ Como Executar o Projeto
 
 1. Clone o repositório:
-   ```bash
-   git clone https://github.com/usuario/PI-3-backend.git
-   ```
+
+```bash
+git clone https://github.com/Luanacsilva/academic-control-backend.git
+cd academic-control-backend
+```
 
 2. Instale as dependências:
-   ```bash
-   npm install
-   ```
 
-3. Configure o arquivo `.env` com suas variáveis de ambiente, como as credenciais de conexão com o banco de dados.
+```bash
+npm install
+```
 
-4. Execute as migrações do Prisma para criar o banco de dados:
-   ```bash
-   npx prisma migrate dev
-   ```
+3. Configure o arquivo .env:
 
-## Executando o Projeto
+```bash
+PORT=3000
+MONGO_URI=seu_mongo_uri
+JWT_SECRET=sua_chave_super_secreta
+```
 
-Para rodar o servidor em modo de desenvolvimento:
+4. Inicie o servidor:
 
 ```bash
 npm run dev
-```
+ ```
 
-O servidor estará disponível em `http://localhost:3000`.
+---
 
-## Funcionalidades
+## 👥 Contribuidores
 
-- **Autenticação** - Sistema de login com criptografia de senha e geração de tokens JWT.
-- **Gerenciamento de usuários** - CRUD para usuários, incluindo criação, leitura, atualização e exclusão.
-- **Integração com banco de dados** - Prisma ORM para comunicação com o banco de dados.
+<table> <tr> <td align="center"> <a href="https://github.com/Luanacsilva"> <img src="https://avatars.githubusercontent.com/u/00000000?v=4" width="100px;" alt="Luana"/><br /> <sub><b>Luana Cristina da Silva</b></sub> </a><br/> <code>@Luanacsilva</code> </td> <td align="center"> <a href="https://github.com/xLupus"> <img src="https://avatars.githubusercontent.com/u/82850927?v=4" width="100px;" alt="Vinícius"/><br /> <sub><b>Vinícius A Souza</b></sub> </a><br/> <code>@xLupus</code> </td> </tr> </table>
 
-## Rotas Disponíveis
 
-### Rotas de Autenticação
+---
 
-- **POST** `/auth/login`: Realiza o login de um usuário, retornando um token JWT.
+## ⚖️ Licença
 
-### Rotas de Usuários
+Este projeto está licenciado sob a licença MIT.
 
-- **POST** `/users`: Cria um novo usuário.
-- **GET** `/users`: Retorna a lista de usuários.
-- **GET** `/users/:id`: Retorna os detalhes de um usuário específico.
-- **PUT** `/users/:id`: Atualiza um usuário existente.
-- **DELETE** `/users/:id`: Remove um usuário.
 
-### Rotas de Classes
 
-- **POST** `/classes`: Cria uma nova classe.
-- **GET** `/classes`: Retorna a lista de classes.
-- **GET** `/classes/:id`: Retorna os detalhes de uma classe específica.
-- **PUT** `/classes/:id`: Atualiza uma classe existente.
-- **DELETE** `/classes/:id`: Remove uma classe.
 
-### Rotas de Notas
 
-- **POST** `/grades`: Cria uma nova nota.
-- **GET** `/grades`: Retorna a lista de notas.
-- **GET** `/grades/:id`: Retorna os detalhes de uma nota específica.
-- **PUT** `/grades/:id`: Atualiza uma nota existente.
-- **DELETE** `/grades/:id`: Remove uma nota.
-
-### Rotas de Anúncios
-
-- **POST** `/announcements`: Cria um novo anúncio.
-- **GET** `/announcements`: Retorna a lista de anúncios.
-- **GET** `/announcements/:id`: Retorna os detalhes de um anúncio específico.
-- **PUT** `/announcements/:id`: Atualiza um anúncio existente.
-- **DELETE** `/announcements/:id`: Remove um anúncio.
-
-### Rotas de Disciplinas
-
-- **POST** `/subjects`: Cria uma nova disciplina.
-- **GET** `/subjects`: Retorna a lista de disciplinas.
-- **GET** `/subjects/:id`: Retorna os detalhes de uma disciplina específica.
-- **PUT** `/subjects/:id`: Atualiza uma disciplina existente.
-- **DELETE** `/subjects/:id`: Remove uma disciplina.
-
-## Scripts Disponíveis
-
-- `npm run dev`: Inicia o servidor no modo de desenvolvimento e observa as mudanças nos arquivos.
-
-## Licença
-
-Este projeto é licenciado sob a licença **ISC**.
 
