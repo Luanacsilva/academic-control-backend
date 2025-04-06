@@ -1,6 +1,13 @@
 # 🎓 Academic Control API — Backend de Gestão Educacional
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+![stack: backend](https://img.shields.io/badge/stack-backend-blue)
+![status: concluído](https://img.shields.io/badge/status-concluído-brightgreen)
+![language: TypeScript](https://img.shields.io/badge/language-TypeScript-blue)
+![framework: Express](https://img.shields.io/badge/framework-Express-lightgrey)
+![auth: JWT](https://img.shields.io/badge/auth-JWT-yellow)
+![docs: Swagger](https://img.shields.io/badge/docs-Swagger-informational)
+![license: MIT](https://img.shields.io/badge/license-MIT-green)
+
 
 
 Este repositório contém o backend da **Academic Control**, uma API RESTful para gerenciamento de usuários em um ambiente educacional.  
